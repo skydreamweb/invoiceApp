@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Fakture za PR</title>
+</head>
+
+<body>
+
+  <div id="invoice">
+
+    <div class="toolbar hidden-print">
+      <div id="dugmad" class="text-right">
+        <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
+        <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>
+      </div>
+      <hr>
+    </div>
+    <div class="invoice overflow-auto">
+      <div style="min-width: 600px">
+        <header>
+          <div class="row main-header">
+            <div class="col company-details">
+              <h2 class="name">SkyDream Web</h2>
+              <div class="prname">PR Dalibor Stojadinović</div>
+              <div>Agencija za izradu internet prezentacija</div>
+              <div> razvoj internet aplikacija i internet marketing </div>
+              <div>Djuke Dinic 10/14 11109, Beograd, Srbija</div>
+              <div>E-mail: info@skydream.info</div>
+              <div>Tel: +381 64 13 84 964</div>
+              <div>MB: 65056011</div>
+              <div>PIB: 110886533</div>
+            </div>
+
+  <!-- Logo - - - - - - - - - - - -  Start -->
+            <div class="col logo">
+              <a target="_blank" href="https://www.skydream.info">
+                <img id="logo" src="img/square_logo_sm.png" data-holder-rendered="true" />
+              </a>
+            </div>
+          </div>
+<!--Logo - - - - - - - - - - - -  End  -->
+        </header>
+        <main>
+          <div class="faktura">
+            <div class="text-gray-light fakturaza">RAČUN ZA:</div>
+            <div class="invoice-id fakturabroj">RAČUN BR. <input type="text" placeholder="# fakture" class="inputfaktura"></div>
+          </div>
+          <div class="row contacts">
+            <div class="col invoice-to">
+              <h2 class="to"><input class="inputfirma" type="text" name="" placeholder="Ime firme"></h2>
+
+              <textarea class="textAreaMultiline textareafirma" placeholder="Pun naziv firme \nAdresa \nKontakt \nMB i PIB" rows="8" cols="50"></textarea>
+            </div>
+
+            <div class="col invoice-details">
+              <div class="dates">Datum izdavanja: <input type="text" name="date" placeholder="23/02/2018" class="dates"></div>
+              <div class="dates">Datum prispeća: <input type="text" name="date" class="dates" placeholder="23/02/2018"></div>
+            </div>
+          </div>
+
+          <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th class="text-left">OPIS USLUGE</th>
+                <th class="text-right">CENA</th>
+                <th class="text-right">KOLIČINA</th>
+                <th class="text-right">UKUPNO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="no downline"><input class="kolona" type="text" placeholder="01"></input></td>
+                <td class="text-left downline">
+                  <h3>
+                    <input class="inputopis" type="text" placeholder="Naziv usluge">
+                  </h3>
+                  <input class="inputopis" type="text" placeholder="Opis usluge">
+                </td>
+                <td class="unit downline"><input id="cena1" class="input inputopiscena" type="text" placeholder="€"></input></td>
+                <td class="qty downline"><input id="kolicina1" class="input inputopiskol" type="text" placeholder="1"></input></td>
+                <td class="total downline"><input id="total1" class="inputopistotal" disable="disable" placeholder="€"></input></td>
+              </tr>
+
+              <tr>
+                <td class="no"><input class="kolona" type="text" placeholder=""></input></td>
+                <td class="text-left">
+                  <h3>
+                    <input class="inputopis" type="text" placeholder="">
+                  </h3>
+                  <input class="inputopis" type="text" placeholder="">
+                </td>
+                <td class="unit"><input id="cena2" class="input inputopiscena" type="text" placeholder=""></input></td>
+                <td class="qty"><input id="kolicina2" class="input inputopiskol" type="text" placeholder=""></input></td>
+                <td class="total"><input id="total2" class="input inputopistotal" disable="disable" placeholder=""></input></td>
+              </tr>
+
+              <tr>
+                <td class="no"><input class="kolona" type="text" placeholder=""></input></td>
+                <td class="text-left">
+                  <h3>
+                    <input class="inputopis" type="text" placeholder="">
+                  </h3>
+                  <input class="inputopis" type="text" placeholder="">
+                </td>
+                <td class="unit"><input id="cena3" class="input inputopiscena" type="text" placeholder=""></input></td>
+                <td class="qty"><input id="kolicina3" class="input inputopiskol" type="text" placeholder=""></input></td>
+                <td class="total"><input id="total3" class="inputopistotal" disable="disable" placeholder=""></input></td>
+              </tr>
+
+
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2"></td>
+                <td class="subtotall" colspan="2">SUBTOTAL:</td>
+                <td class="subtotall total input"><input id="subtotal1" class="input inputopistotal" disable="disable" placeholder=""></td>
+              </tr>
+              <tr>
+                <td colspan="2"></td>
+                <td colspan="2">PDV:</td>
+                <td class="total input"><input id="subtotal1" class="input inputopistotal" disable="disable" placeholder=""></td>
+              </tr>
+              <tr>
+                <td colspan="2"></td>
+                <td class="grandtotal" colspan="2">GRAND TOTAL:</td>
+                <td class="grandtotal total input"><input id="subtotal1" class="input inputopistotal" disable="disable" placeholder=""></td>
+              </tr>
+            </tfoot>
+          </table>
+          <div class="thanks">Hvala što koristite naše usluge!</div>
+          <div class="notices">
+            <div>NAPOMENA:</div>
+            <div class="notice">* Sve cene su izražene u dinarima.</br>* SkyDream nije u sistemu PDV-a.</br>* Elektronska faktura validna bez pečata i potpisa.</div>
+          </div>
+        </main>
+        <footer class="footeric">
+          <span>Komercijalna Banka, AD Beograd&emsp;</span>
+          <span>TR RSD: 205-258576-69&emsp;</span><span>TR EUR: 0071000535774</span>
+        </footer>
+      </div>
+      <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+      <div></div>
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="main.js" charset="utf-8"></script>
+</body>
+
+</html>
